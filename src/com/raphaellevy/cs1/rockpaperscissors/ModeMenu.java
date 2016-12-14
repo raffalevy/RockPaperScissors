@@ -3,15 +3,15 @@ package com.raphaellevy.cs1.rockpaperscissors;
 import java.util.Scanner;
 
 /**
- * Menu to choose between 1/1 and 2/3
+ * Main menu - displayed at start of game. Allows for choice between 1/1 and 2/3
  * @author raffa
  */
-class ModeMenu {
+class ModeMenu extends ConsoleMenu{
 	private Scanner scan;
 	private Main mainClass;
 	ModeMenu(Main mainClass) {
-		this.mainClass = mainClass;
-		scan = mainClass.scan;
+		super(mainClass);
 	}
+	
 	
 }

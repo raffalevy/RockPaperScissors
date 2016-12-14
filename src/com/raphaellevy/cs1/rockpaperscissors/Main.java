@@ -38,8 +38,8 @@ public class Main {
 	 * Private constructor for Main singleton object
 	 */
 	private Main() {
+		scan = new Scanner(System.in);
 		System.out.println(WELCOME_MESSAGE);
-		
 	};
 
 }

@@ -14,11 +14,6 @@ public class Main {
 	private static Main instance;
 
 	/**
-	 * Message displayed when game started
-	 */
-	static final String WELCOME_MESSAGE = "Rock Paper Scissors\n" + "-------------------";
-
-	/**
 	 * @return Single instance of Main
 	 */
 	static Main getInstance() {
@@ -39,7 +34,9 @@ public class Main {
 	 */
 	private Main() {
 		scan = new Scanner(System.in);
-		System.out.println(WELCOME_MESSAGE);
+		System.out.println(GameConstants.WELCOME_MESSAGE);
+		System.out.println(GameConstants.MENU_INSTRUCTIONS);
+		new ModeMenu(this).showMenu();
 	};
 
 }

@@ -9,12 +9,13 @@ import java.util.Random;
  */
 class HelperMethods {
 	static Random rand = new Random();
-	
+
 	/**
 	 * @return A cool name for a computer opponent
 	 */
 	static String computerName() {
-		String[] names = {"Appy","Javabot","RockPaperScissorsMaster","Grandmaster"};
-		return Integer.toHexString(rand.nextInt(0xFFFF)) + names[rand.nextInt(names.length)] + Integer.toHexString(rand.nextInt(0xFFFF));
+		String[] names = { "Appy", "Javabot", "RockPaperScissorsMaster", "Grandmaster", "Cal" };
+		return Integer.toHexString(rand.nextInt(0xFFFF)) + names[rand.nextInt(names.length)]
+				+ Integer.toHexString(rand.nextInt(0xFFFF));
 	}
 }

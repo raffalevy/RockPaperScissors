@@ -40,7 +40,9 @@ abstract class ConsoleMenu extends RPSComponent {
 			String input = scan.nextLine();
 			for (ConsoleMenuItem item : getItems()) {
 				if (item.shortcut.equalsIgnoreCase(input) || item.text.equalsIgnoreCase(input)) {
-					item.action.run();
+					if (item.action != null) {
+						item.action.run();
+					}
 				}
 			}
 			System.out.println("Sorry, I don't know what that meant. Try again with one of the options from the menu.");

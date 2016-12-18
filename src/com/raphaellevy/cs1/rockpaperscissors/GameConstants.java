@@ -5,7 +5,7 @@ package com.raphaellevy.cs1.rockpaperscissors;
  * 
  * @author raffa
  */
-public class GameConstants {
+class GameConstants {
 
 	/**
 	 * Message to be displayed at end of game or when quitted.
@@ -21,4 +21,20 @@ public class GameConstants {
 	 */
 	static final String WELCOME_MESSAGE = "Rock Paper Scissors\n" + "-------------------";
 
+	/**
+	 * Int value representing Rock.
+	 */
+
+	static final int ROCK = 0;
+
+	/**
+	 * Int value representing Paper.
+	 */
+
+	static final int PAPER = 1;
+
+	/**
+	 * Int value representing Scissors.
+	 */
+	static final int SCISSORS = 2;
 }

@@ -19,7 +19,7 @@ public class Main {
 	static Main getInstance() {
 		return instance;
 	}
-	
+
 	/**
 	 * Called when user chooses to exit game.
 	 */
@@ -27,7 +27,7 @@ public class Main {
 		System.out.println(GameConstants.EXIT_MESSAGE);
 		System.exit(0);
 	}
-	
+
 	/**
 	 * Main Method - runs at start of program
 	 */
@@ -37,7 +37,9 @@ public class Main {
 	}
 
 	/**
-	 * This {@link Scanner} will be used by all classes which need it, as opposed to using separate Scanners for each, in order to avoid undefined behavior.
+	 * This {@link Scanner} will be used by all classes which need it, as
+	 * opposed to using separate Scanners for each, in order to avoid undefined
+	 * behavior.
 	 */
 	Scanner scan;
 

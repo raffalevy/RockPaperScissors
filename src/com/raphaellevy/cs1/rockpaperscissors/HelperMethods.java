@@ -18,4 +18,19 @@ class HelperMethods {
 		return Integer.toHexString(rand.nextInt(0xFFFF)) + names[rand.nextInt(names.length)]
 				+ Integer.toHexString(rand.nextInt(0xFFFF));
 	}
+
+	/**
+	 * Randomly generate a value of {@link GameConstants#ROCK}, {@link GameConstants#PAPER}, or {@link GameConstants#PAPER}.
+	 */
+	static int generateRockPaperScissors() {
+		switch (rand.nextInt(2)) {
+		case 0:
+			return GameConstants.ROCK;
+		case 1:
+			return GameConstants.PAPER;
+		case 2:
+			return GameConstants.SCISSORS;
+		}
+		return 0;
+	}
 }

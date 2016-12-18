@@ -13,9 +13,9 @@ class ConsoleMenuItem {
 	 * @return "Quit Application" menu item for quitting the game.
 	 */
 	static ConsoleMenuItem getExitItem() {
-		return new ConsoleMenuItem("Q","Quit Application",Main.getInstance()::onExit);
+		return new ConsoleMenuItem("Q", "Quit Application", Main.getInstance()::onExit);
 	}
-	
+
 	/**
 	 * The {@link Action} to be executed ({@link Action #run()}) when this item
 	 * is selected.

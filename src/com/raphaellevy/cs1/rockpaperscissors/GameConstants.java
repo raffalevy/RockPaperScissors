@@ -15,7 +15,7 @@ public class GameConstants {
 	 * Instructions to be displayed at start of game so that the user knows how
 	 * to use the menus.
 	 */
-	static final String MENU_INSTRUCTIONS = "Welcome! To select an item from any of the menus in this game,\ntype the letter or number shown at the beginning of the menu option and press ENTER.";
+	static final String MENU_INSTRUCTIONS = "Welcome! To select an item from any of the menus in this game,\ntype the shortcut shown at the beginning of the menu option and press ENTER.";
 	/**
 	 * Message displayed when game started
 	 */

@@ -21,10 +21,7 @@ class ModeMenu extends ConsoleMenu {
 		items = new ArrayList<>();
 		items.add(new ConsoleMenuItem("1", "1 out of 1", new Game1OutOf1(mainClass)::play));
 		items.add(new ConsoleMenuItem("2", "2 out of 3", new Game2OutOf3(mainClass)::play));
-		items.add(new ConsoleMenuItem("Q", "Quit Application", () -> {
-			System.out.println(GameConstants.EXIT_MESSAGE);
-			System.exit(0);
-		}));
+		items.add(ConsoleMenuItem.getExitItem());
 	}
 
 	@Override

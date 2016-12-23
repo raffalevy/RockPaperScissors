@@ -3,7 +3,9 @@
  */
 package com.raphaellevy.cs1.rockpaperscissors;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * A menu that is displayed in the console, allowing for choice between multiple
@@ -31,11 +33,14 @@ abstract class ConsoleMenu extends RPSComponent {
 	 * Displays the menu and gets input from console
 	 */
 	void showMenu() {
+		HelperMethods.tryThreadSleep(400);
 		System.out.println();
 		System.out.println(getPrompt());
+		HelperMethods.tryThreadSleep(400);
 		for (ConsoleMenuItem item : getItems()) {
 			System.out.println("  " + item.shortcut + ": " + item.text);
 		}
+		HelperMethods.clearSysIn();
 		while (true) {
 			String input = scan.nextLine();
 			for (ConsoleMenuItem item : getItems()) {

@@ -21,6 +21,7 @@ class Game1OutOf1 extends RPSComponent implements RPSListener {
 	 * Start the game! (1/1)
 	 */
 	public void play() {
+		System.out.println("-- You are challenged by Computer Opponent " + HelperMethods.computerName()+" --");
 		new RockPaperScissorsMenu(mainClass, this).showMenu();
 	}
 

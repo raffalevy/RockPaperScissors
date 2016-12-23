@@ -1,5 +1,6 @@
 package com.raphaellevy.cs1.rockpaperscissors;
 
+import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -32,5 +33,34 @@ class HelperMethods {
 			return GameConstants.SCISSORS;
 		}
 		return 0;
+	}
+	
+	/**
+	 * Execute {@link Thread#sleep(long)} in a try/catch block.
+	 */
+	static void tryThreadSleep(long millis) {
+		try {
+			Thread.sleep(millis);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Read all bytes from System.in to make sure previous input does not interfere with menus.
+	 */
+	static void clearSysIn() {
+		try {
+			while (System.in.available() !=0 )
+				try {
+					System.in.read();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

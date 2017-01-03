@@ -13,7 +13,7 @@ import static com.raphaellevy.cs1.rockpaperscissors.GameEnd.*;
  */
 class Game1OutOf1 extends RPSComponent implements RPSListener {
 
-	Game1OutOf1(Main mainClass) {
+	Game1OutOf1(RockPaperScissors mainClass) {
 		super(mainClass);
 	}
 

@@ -12,7 +12,7 @@ import javax.naming.OperationNotSupportedException;
  */
 class Game2OutOf3 extends RPSComponent {
 
-	Game2OutOf3(Main mainClass) {
+	Game2OutOf3(RockPaperScissors mainClass) {
 		super(mainClass);
 	}
 

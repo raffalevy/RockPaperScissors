@@ -10,10 +10,10 @@ package com.raphaellevy.cs1.rockpaperscissors;
 class GameEnd {
 	static void win() {
 		System.out.println("You win!");
-		Main.getInstance().onExit();
+		RockPaperScissors.getInstance().onExit();
 	};
 	static void lose() {
 		System.out.println("You lose...");
-		Main.getInstance().onExit();
+		RockPaperScissors.getInstance().onExit();
 	};
 }

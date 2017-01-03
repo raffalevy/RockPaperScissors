@@ -15,7 +15,8 @@ class RockPaperScissorsMenu extends ConsoleMenu {
 
 	private List<ConsoleMenuItem> items;
 
-	RockPaperScissorsMenu(Main mainClass, RPSListener listener) {
+	RockPaperScissorsMenu(RockPaperScissors mainClass, RPSListener listener) {
+
 		super(mainClass);
 		items = new ArrayList<>();
 		items.add(new ConsoleMenuItem("R", "Rock", listener::onRock));

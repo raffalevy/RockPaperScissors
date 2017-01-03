@@ -3,16 +3,16 @@ package com.raphaellevy.cs1.rockpaperscissors;
 import java.util.Scanner;
 
 /**
- * Most classes extend this other than {@link Main}. Contains important
+ * Most classes extend this other than {@link RockPaperScissors}. Contains important
  * information such as the {@link Scanner} and Main instance.
  * 
  * @author raffa
  */
 abstract class RPSComponent {
-	protected Main mainClass;
+	protected RockPaperScissors mainClass;
 	protected Scanner scan;
 
-	RPSComponent(Main mainClass) {
+	RPSComponent(RockPaperScissors mainClass) {
 		this.mainClass = mainClass;
 		scan = mainClass.scan;
 	}

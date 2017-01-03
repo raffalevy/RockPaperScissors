@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author raffa
  */
 abstract class ConsoleMenu extends RPSComponent {
-	ConsoleMenu(Main mainClass) {
+	ConsoleMenu(RockPaperScissors mainClass) {
 		super(mainClass);
 	}
 

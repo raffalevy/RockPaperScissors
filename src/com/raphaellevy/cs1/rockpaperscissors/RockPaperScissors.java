@@ -2,6 +2,8 @@ package com.raphaellevy.cs1.rockpaperscissors;
 
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+
 import com.raphaellevy.cs1.rockpaperscissors.gui.RPSFrame;
 
 /**
@@ -34,8 +36,12 @@ public class RockPaperScissors {
 	 * Main Method - runs at start of program
 	 */
 	public static void main(String[] args) {
-		instance = new RockPaperScissors();
-		instance.start();
+//		instance = new RockPaperScissors();
+//		instance.start();
+		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Rock Paper Scissors");
+		System.setProperty("apple.laf.useScreenMenuBar", "true");
+		com.apple.eawt.Application.getApplication().setDockIconImage(new ImageIcon(RockPaperScissors.class.getResource("icon.png")).getImage());
+		new RPSFrame();
 	}
 
 	/**

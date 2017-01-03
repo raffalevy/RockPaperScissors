@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -45,7 +46,7 @@ public class RPSMenuBar extends JMenuBar {
 
 		JMenuItem git = new JMenuItem("Github Repository");
 		git.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, KeyEvent.META_DOWN_MASK));
-		git.setAction(new Action() {
+		git.addActionListener(new AbstractAction() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -55,42 +56,6 @@ public class RPSMenuBar extends JMenuBar {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
-
-			@Override
-			public Object getValue(String key) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void putValue(String key, Object value) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void setEnabled(boolean b) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public boolean isEnabled() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-
-			@Override
-			public void addPropertyChangeListener(PropertyChangeListener listener) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void removePropertyChangeListener(PropertyChangeListener listener) {
-				// TODO Auto-generated method stub
-
 			}
 
 		});

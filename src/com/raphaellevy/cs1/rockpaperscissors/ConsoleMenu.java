@@ -12,7 +12,7 @@ import java.util.List;
  * @author raffa
  */
 abstract class ConsoleMenu extends RPSComponent {
-	ConsoleMenu(Main mainClass) {
+	ConsoleMenu(RockPaperScissors mainClass) {
 		super(mainClass);
 	}
 

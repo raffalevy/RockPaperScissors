@@ -16,7 +16,7 @@ class ModeMenu extends ConsoleMenu {
 
 	private List<ConsoleMenuItem> items;
 
-	ModeMenu(Main mainClass) {
+	ModeMenu(RockPaperScissors mainClass) {
 		super(mainClass);
 		items = new ArrayList<>();
 		items.add(new ConsoleMenuItem("1", "1 out of 1", new Game1OutOf1(mainClass)::play));

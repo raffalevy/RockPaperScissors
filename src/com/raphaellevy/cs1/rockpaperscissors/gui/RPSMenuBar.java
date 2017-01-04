@@ -39,9 +39,22 @@ public class RPSMenuBar extends JMenuBar {
 		help.add(instructions);
 
 		help.addSeparator();
-
+		
 		JMenuItem doc = new JMenuItem("Code Documentation");
 		doc.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, KeyEvent.META_DOWN_MASK));
+		doc.addActionListener(new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Desktop.getDesktop().browse(new URI("https://raffalevy.github.io/RockPaperScissors/"));
+				} catch (IOException | URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+			}
+			
+		});
 		help.add(doc);
 
 		JMenuItem git = new JMenuItem("Github Repository");

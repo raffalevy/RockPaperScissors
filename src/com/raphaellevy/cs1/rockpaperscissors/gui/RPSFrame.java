@@ -1,6 +1,7 @@
 package com.raphaellevy.cs1.rockpaperscissors.gui;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class RPSFrame extends JFrame {
 	public static final int WINDOW_WIDTH = 740;
@@ -12,7 +13,6 @@ public class RPSFrame extends JFrame {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		menuBar = new RPSMenuBar();
 		setJMenuBar(menuBar);
-		;
 		setVisible(true);
 	}
 

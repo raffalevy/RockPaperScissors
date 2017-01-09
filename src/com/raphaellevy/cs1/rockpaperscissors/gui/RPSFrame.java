@@ -26,10 +26,12 @@ public class RPSFrame extends JFrame {
 	private JPanel panel = null;
 	
 	public RPSFrame() {
-		menuBar = new RPSMenuBar();
+		menuBar = new RPSMenuBar(this);
 		setJMenuBar(menuBar);
 		setVisible(true);
 	}
+	
+	GlobalActions actions;
 	
 	public static void runApp() {
 		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Rock Paper Scissors");
@@ -43,6 +45,7 @@ public class RPSFrame extends JFrame {
 			e.printStackTrace(); 
 		}
 		RPSFrame frame = new RPSFrame();
+		frame.actions = new GlobalActions(frame);
 		frame.setContentPane(new ModeMenuPanel(frame));
 		frame.pack();
 		frame.revalidate();

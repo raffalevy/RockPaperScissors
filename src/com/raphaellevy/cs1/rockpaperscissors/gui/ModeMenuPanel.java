@@ -23,11 +23,8 @@ public class ModeMenuPanel extends RPSContentPane {
 		label.setFont(frame.lato(40));
 		label.setAlignmentX(CENTER_ALIGNMENT);
 		
-		mode11 = new JButton("1/1");
-		mode11.setFont(frame.lato(25));
-		mode11.setPreferredSize(new Dimension(160, 85));
-		mode23 = new JButton("2/3");
-		mode23.setFont(frame.lato(25));
+		mode11 = new ModeButton("1/1", frame);
+		mode23 = new ModeButton("2/3", frame);
 		
 		BoxLayout lo = new BoxLayout(this, BoxLayout.Y_AXIS);
 		setLayout(lo);
@@ -39,9 +36,8 @@ public class ModeMenuPanel extends RPSContentPane {
 		add(Box.createRigidArea(new Dimension(0,40)));
 		
 		add(new JPanel() {{
-			setOpaque(true);
+			setOpaque(false);
 			setAlignmentX(CENTER_ALIGNMENT);
-			setLayout(new BoxLayout(this,BoxLayout.X_AXIS));
 			add(mode11);
 			add(mode23);
 		}});

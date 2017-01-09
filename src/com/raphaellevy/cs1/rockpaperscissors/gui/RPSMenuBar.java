@@ -16,7 +16,7 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 public class RPSMenuBar extends JMenuBar {
-	public RPSMenuBar() {
+	public RPSMenuBar(RPSFrame frame) {
 		JMenu game = new JMenu("Game");
 		JMenuItem newGame = new JMenuItem("New Game");
 		newGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.META_DOWN_MASK));
@@ -36,6 +36,7 @@ public class RPSMenuBar extends JMenuBar {
 
 		JMenuItem instructions = new JMenuItem("Instructions");
 		instructions.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, KeyEvent.META_DOWN_MASK));
+		
 		help.add(instructions);
 
 		help.addSeparator();

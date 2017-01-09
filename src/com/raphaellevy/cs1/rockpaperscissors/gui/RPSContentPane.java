@@ -1,5 +1,6 @@
 package com.raphaellevy.cs1.rockpaperscissors.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
@@ -17,6 +18,8 @@ public abstract class RPSContentPane extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon(RockPaperScissors.class.getResource("/assets/backgroundimage.png")).getImage(), 0, 0, null);
+		g.setColor(new Color(0xF4F4F4));
+		g.fillRect(0,0,RPSFrame.WINDOW_WIDTH, RPSFrame.WINDOW_HEIGHT);
+		g.drawImage(new ImageIcon(RockPaperScissors.class.getResource("/assets/backgroundimage.png")).getImage(), 0,0,RPSFrame.WINDOW_WIDTH, RPSFrame.WINDOW_HEIGHT, null);
 	}
 }

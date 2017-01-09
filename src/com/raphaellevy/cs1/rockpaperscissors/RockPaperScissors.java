@@ -38,10 +38,7 @@ public class RockPaperScissors {
 	public static void main(String[] args) {
 //		instance = new RockPaperScissors();
 //		instance.start();
-		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Rock Paper Scissors");
-		System.setProperty("apple.laf.useScreenMenuBar", "true");
-		com.apple.eawt.Application.getApplication().setDockIconImage(new ImageIcon(RockPaperScissors.class.getResource("icon.png")).getImage());
-		new RPSFrame();
+		RPSFrame.runApp();
 	}
 
 	/**

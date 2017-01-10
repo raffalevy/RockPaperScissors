@@ -35,7 +35,6 @@ public class RPSFrame extends JFrame {
 	}
 	
 	GlobalActions actions;
-	
 	public static void runApp() {
 		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Rock Paper Scissors");
 		System.setProperty("apple.laf.useScreenMenuBar", "true");
@@ -48,14 +47,18 @@ public class RPSFrame extends JFrame {
 			e.printStackTrace(); 
 		}
 		RPSFrame frame = new RPSFrame();
-		
-		frame.setContentPane(new ModeMenuPanel(frame));
-		frame.pack();
-		frame.revalidate();
-		frame.repaint();
 		synchronized (frame.actions) {
 			frame.actions.notifyAll();
 		}
+		frame.actions.welcome();
+		frame.pack();
+		
+	}
+	void after() {
+		setContentPane(new ModeMenuPanel(this));
+		pack();
+		revalidate();
+		repaint();
 	}
 	
 }

@@ -8,6 +8,7 @@ import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 public class GlobalActions {
 	public GlobalActions(RPSFrame frame) {
@@ -15,6 +16,19 @@ public class GlobalActions {
 	}
 	
 	private RPSFrame frame;
+	
+	public void welcome() {
+		frame.setContentPane(new WelcomePanel(frame));
+		Timer t = new Timer(4000,new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.after();
+			}
+			
+		});
+		t.start();
+	}
 	
 	public void newGame() {
 		disposeAll();

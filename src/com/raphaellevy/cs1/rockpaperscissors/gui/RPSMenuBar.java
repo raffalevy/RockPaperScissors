@@ -20,23 +20,26 @@ public class RPSMenuBar extends JMenuBar {
 		JMenu game = new JMenu("Game");
 		JMenuItem newGame = new JMenuItem("New Game");
 		newGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.META_DOWN_MASK));
+		frame.actions.addActionListener(newGame, frame.actions::newGame);
 		game.add(newGame);
 
 		JMenuItem newGame11 = new JMenuItem("New 1/1 Game");
 		newGame11.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, KeyEvent.META_DOWN_MASK));
+		frame.actions.addActionListener(newGame11, frame.actions::new1OutOf1);
 		game.add(newGame11);
 
 		JMenuItem newGame23 = new JMenuItem("New 2/3 Game");
 		newGame23.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2, KeyEvent.META_DOWN_MASK));
+		frame.actions.addActionListener(newGame23, frame.actions::new2OutOf3);
 		game.add(newGame23);
-
+		
 		add(game);
 
 		JMenu help = new JMenu("Help");
 
 		JMenuItem instructions = new JMenuItem("Instructions");
 		instructions.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, KeyEvent.META_DOWN_MASK));
-		
+		frame.actions.addActionListener(instructions, frame.actions::instructions);
 		help.add(instructions);
 
 		help.addSeparator();

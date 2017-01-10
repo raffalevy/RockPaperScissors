@@ -26,6 +26,9 @@ public class RPSFrame extends JFrame {
 	private JPanel panel = null;
 	
 	public RPSFrame() {
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		addWindowListener(new RPSWindowListener());
+		this.actions = new GlobalActions(this);
 		menuBar = new RPSMenuBar(this);
 		setJMenuBar(menuBar);
 		setVisible(true);
@@ -45,11 +48,14 @@ public class RPSFrame extends JFrame {
 			e.printStackTrace(); 
 		}
 		RPSFrame frame = new RPSFrame();
-		frame.actions = new GlobalActions(frame);
+		
 		frame.setContentPane(new ModeMenuPanel(frame));
 		frame.pack();
 		frame.revalidate();
-		
+		frame.repaint();
+		synchronized (frame.actions) {
+			frame.actions.notifyAll();
+		}
 	}
 	
 }

@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import com.raphaellevy.cs1.rockpaperscissors.RockPaperScissors;
 
-public abstract class RPSContentPane extends JPanel {
+public class RPSContentPane extends JPanel {
 	public RPSContentPane() {
 		super();
 		setPreferredSize(new Dimension(RPSFrame.WINDOW_WIDTH, RPSFrame.WINDOW_HEIGHT));

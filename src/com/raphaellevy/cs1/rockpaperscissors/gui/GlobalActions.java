@@ -18,31 +18,35 @@ public class GlobalActions {
 	public void welcome() {
 		frame.setContentPane(new WelcomePanel(frame));
 		Timer t = new Timer(4000, new AbstractAction() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.after();
+				// frame.after();
+				if (frame.getContentPane() instanceof WelcomePanel) {
+					newGame();
+				}
 			}
-
 		});
+		t.setRepeats(false);
 		t.start();
 	}
 
 	public void newGame() {
-		disposeAll();
-		frame.setContentPane(new ModeMenuPanel(frame));
-		frame.revalidate();
-		frame.repaint();
+		if (!(frame.getContentPane() instanceof ModeMenuPanel)) {
+			disposeAll();
+			frame.setContentPane(new ModeMenuPanel(frame));
+			frame.revalidate();
+			frame.repaint();
+		}
 	}
 
 	public void new1OutOf1() {
-		frame.setContentPane(new RPSPanel(frame));
+		frame.setContentPane(new RPSPanel(frame, new Game1OutOf1()));
 		frame.revalidate();
 		frame.repaint();
 	}
 
 	public void new2OutOf3() {
-		frame.setContentPane(new RPSPanel(frame));
+		frame.setContentPane(new RPSPanel(frame, null));
 		frame.revalidate();
 		frame.repaint();
 	}

@@ -57,11 +57,11 @@ public class RPSFrame extends JFrame {
 
 	}
 
-	void after() {
-		setContentPane(new ModeMenuPanel(this));
-		pack();
-		revalidate();
-		repaint();
-	}
+	// void after() {
+	// setContentPane(new ModeMenuPanel(this));
+	// pack();
+	// revalidate();
+	// repaint();
+	// }
 
 }

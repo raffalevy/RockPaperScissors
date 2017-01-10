@@ -5,7 +5,7 @@ package com.raphaellevy.cs1.rockpaperscissors;
  * 
  * @author raffa
  */
-interface RPSListener {
+public interface RPSListener {
 	/**
 	 * Called when the player chooses Rock.
 	 */

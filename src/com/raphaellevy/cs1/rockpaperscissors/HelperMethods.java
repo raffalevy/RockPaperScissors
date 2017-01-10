@@ -8,7 +8,7 @@ import java.util.Random;
  * 
  * @author raffa
  */
-class HelperMethods {
+public class HelperMethods {
 	static Random rand = new Random();
 
 	/**
@@ -21,9 +21,10 @@ class HelperMethods {
 	}
 
 	/**
-	 * Randomly generate a value of {@link GameConstants#ROCK}, {@link GameConstants#PAPER}, or {@link GameConstants#PAPER}.
+	 * Randomly generate a value of {@link GameConstants#ROCK},
+	 * {@link GameConstants#PAPER}, or {@link GameConstants#PAPER}.
 	 */
-	static int generateRockPaperScissors() {
+	public static int generateRockPaperScissors() {
 		switch (rand.nextInt(2)) {
 		case 0:
 			return GameConstants.ROCK;
@@ -34,7 +35,7 @@ class HelperMethods {
 		}
 		return 0;
 	}
-	
+
 	/**
 	 * Execute {@link Thread#sleep(long)} in a try/catch block.
 	 */
@@ -45,13 +46,14 @@ class HelperMethods {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * Read all bytes from System.in to make sure previous input does not interfere with menus.
+	 * Read all bytes from System.in to make sure previous input does not
+	 * interfere with menus.
 	 */
 	static void clearSysIn() {
 		try {
-			while (System.in.available() !=0 )
+			while (System.in.available() != 0)
 				try {
 					System.in.read();
 				} catch (IOException e) {

@@ -40,7 +40,7 @@ public class GlobalActions {
 	}
 
 	public void new1OutOf1() {
-		frame.setContentPane(new RPSPanel(frame, new Game1OutOf1()));
+		frame.setContentPane(new Game1OutOf1(frame).p);
 		frame.revalidate();
 		frame.repaint();
 	}

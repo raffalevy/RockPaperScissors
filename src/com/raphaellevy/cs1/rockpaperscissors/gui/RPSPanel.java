@@ -6,6 +6,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import com.raphaellevy.cs1.rockpaperscissors.RPSListener;
 
@@ -14,7 +15,8 @@ public class RPSPanel extends RPSContentPane {
 	ModeButton rockButton;
 	ModeButton paperButton;
 	ModeButton scissorsButton;
-
+	JLabel countdown;
+	
 	public RPSPanel(RPSFrame frame, RPSListener rpslistener) {
 		super(frame);
 
@@ -31,6 +33,12 @@ public class RPSPanel extends RPSContentPane {
 		synchronized (frame.actions) {
 			frame.actions.notifyAll();
 		}
+		
+		countdown = new JLabel("Rock…");
+		countdown.setFont(frame.lato(72));
+		countdown.setHorizontalAlignment(SwingConstants.CENTER);
+		countdown.setAlignmentX(CENTER_ALIGNMENT);
+		countdown.setVisible(false);
 
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		add(Box.createRigidArea(new Dimension(0, 35)));
@@ -44,8 +52,19 @@ public class RPSPanel extends RPSContentPane {
 				add(paperButton);
 				add(scissorsButton);
 				setMaximumSize(getPreferredSize());
-
 			}
 		});
+		add(Box.createRigidArea(new Dimension(0, 20)));
+		add(countdown);
+	}
+	public void enableButtons() {
+		rockButton.setEnabled(true);
+		paperButton.setEnabled(true);
+		scissorsButton.setEnabled(true);
+	}
+	public void disableButtons() {
+		rockButton.setEnabled(false);
+		paperButton.setEnabled(false);
+		scissorsButton.setEnabled(false);
 	}
 }

@@ -16,10 +16,6 @@ public class RPSFrame extends JFrame {
 	public static final int WINDOW_WIDTH = 740;
 	public static final int WINDOW_HEIGHT = 470;
 
-	public Font lato(int size) {
-		return new Font("Lato", Font.PLAIN, size);
-	};
-
 	private RPSMenuBar menuBar;
 
 	private JPanel panel = null;

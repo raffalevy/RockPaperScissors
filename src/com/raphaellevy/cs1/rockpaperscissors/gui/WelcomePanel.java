@@ -12,7 +12,7 @@ public class WelcomePanel extends RPSContentPane {
 		JLabel label = new JLabel("Welcome!");
 		label.setHorizontalAlignment((int) JFrame.CENTER_ALIGNMENT);
 		// label.setAlignmentY(JFrame.CENTER_ALIGNMENT);
-		label.setFont(frame.lato(50));
+		label.setFont(frame.actions.lato(50));
 		add(label, BorderLayout.CENTER);
 	}
 }

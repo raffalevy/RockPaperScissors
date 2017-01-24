@@ -16,26 +16,23 @@ public class RPSPanel extends RPSContentPane {
 	ModeButton paperButton;
 	ModeButton scissorsButton;
 	JLabel countdown;
-	
+
 	public RPSPanel(RPSFrame frame, RPSListener rpslistener) {
 		super(frame);
 
 		label = new JLabel("Would you like to play Rock, Paper, or Scissors?");
 		label.setAlignmentX(CENTER_ALIGNMENT);
-		label.setFont(frame.lato(32));
+		label.setFont(frame.actions.lato(32));
 
 		rockButton = new ModeButton("Rock", frame);
 		frame.actions.addActionListener(rockButton, rpslistener::onRock);
 		paperButton = new ModeButton("Paper", frame);
-		frame.actions.addActionListener(rockButton, rpslistener::onPaper);
+		frame.actions.addActionListener(paperButton, rpslistener::onPaper);
 		scissorsButton = new ModeButton("Scissors", frame);
-		frame.actions.addActionListener(rockButton, rpslistener::onScissors);
-		synchronized (frame.actions) {
-			frame.actions.notifyAll();
-		}
-		
+		frame.actions.addActionListener(scissorsButton, rpslistener::onScissors);
+
 		countdown = new JLabel("Rock…");
-		countdown.setFont(frame.lato(72));
+		countdown.setFont(frame.actions.lato(72));
 		countdown.setHorizontalAlignment(SwingConstants.CENTER);
 		countdown.setAlignmentX(CENTER_ALIGNMENT);
 		countdown.setVisible(false);
@@ -57,11 +54,13 @@ public class RPSPanel extends RPSContentPane {
 		add(Box.createRigidArea(new Dimension(0, 20)));
 		add(countdown);
 	}
+
 	public void enableButtons() {
 		rockButton.setEnabled(true);
 		paperButton.setEnabled(true);
 		scissorsButton.setEnabled(true);
 	}
+
 	public void disableButtons() {
 		rockButton.setEnabled(false);
 		paperButton.setEnabled(false);

@@ -3,13 +3,11 @@ package com.raphaellevy.cs1.rockpaperscissors.gui;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 import javax.swing.AbstractAction;
-import javax.swing.Action;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -32,7 +30,7 @@ public class RPSMenuBar extends JMenuBar {
 		newGame23.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2, KeyEvent.META_DOWN_MASK));
 		frame.actions.addActionListener(newGame23, frame.actions::new2OutOf3);
 		game.add(newGame23);
-		
+
 		add(game);
 
 		JMenu help = new JMenu("Help");
@@ -43,25 +41,27 @@ public class RPSMenuBar extends JMenuBar {
 		help.add(instructions);
 
 		help.addSeparator();
-		
-		JMenuItem doc = new JMenuItem("Code Documentation");
-		doc.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, KeyEvent.META_DOWN_MASK));
-		doc.addActionListener(new AbstractAction() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					Desktop.getDesktop().browse(new URI("https://raffalevy.github.io/RockPaperScissors/"));
-				} catch (IOException | URISyntaxException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}				
-			}
-			
-		});
-		help.add(doc);
+		// JMenuItem doc = new JMenuItem("Code Documentation");
+		// doc.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
+		// KeyEvent.META_DOWN_MASK));
+		// doc.addActionListener(new AbstractAction() {
+		//
+		// @Override
+		// public void actionPerformed(ActionEvent e) {
+		// try {
+		// Desktop.getDesktop().browse(new
+		// URI("https://raffalevy.github.io/RockPaperScissors/"));
+		// } catch (IOException | URISyntaxException e1) {
+		// // TODO Auto-generated catch block
+		// e1.printStackTrace();
+		// }
+		// }
+		//
+		// });
+		// help.add(doc);
 
-		JMenuItem git = new JMenuItem("Github Repository");
+		JMenuItem git = new JMenuItem("Github Repository (Source Code)");
 		git.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, KeyEvent.META_DOWN_MASK));
 		git.addActionListener(new AbstractAction() {
 

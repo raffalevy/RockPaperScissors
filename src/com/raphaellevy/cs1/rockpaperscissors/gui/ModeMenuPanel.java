@@ -17,7 +17,7 @@ public class ModeMenuPanel extends RPSContentPane {
 	public ModeMenuPanel(RPSFrame frame) {
 		super(frame);
 		label = new JLabel("Would you like to play 1/1 or 2/3?");
-		label.setFont(frame.lato(40));
+		label.setFont(frame.actions.lato(40));
 		label.setAlignmentX(CENTER_ALIGNMENT);
 
 		mode11 = new ModeButton("1/1", frame);
@@ -26,7 +26,7 @@ public class ModeMenuPanel extends RPSContentPane {
 		frame.actions.addActionListener(mode23, frame.actions::new2OutOf3);
 
 		instructionsButton = new JButton("Instructions");
-		instructionsButton.setFont(frame.lato(25));
+		instructionsButton.setFont(frame.actions.lato(25));
 		instructionsButton.setAlignmentX(CENTER_ALIGNMENT);
 		frame.actions.addActionListener(instructionsButton, frame.actions::instructions);
 
@@ -52,8 +52,5 @@ public class ModeMenuPanel extends RPSContentPane {
 		add(Box.createRigidArea(new Dimension(0, 40)));
 
 		add(instructionsButton);
-		synchronized (frame.actions) {
-			frame.actions.notifyAll();
-		}
 	}
 }

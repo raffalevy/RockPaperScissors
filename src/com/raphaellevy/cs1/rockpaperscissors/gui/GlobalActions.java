@@ -1,11 +1,13 @@
 package com.raphaellevy.cs1.rockpaperscissors.gui;
 
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 public class GlobalActions {
@@ -64,27 +66,37 @@ public class GlobalActions {
 	}
 
 	public void addActionListener(AbstractButton comp, Runnable r) {
-		new Thread(() -> {
-			try {
-				synchronized (this) {
-					wait();
-				}
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+		comp.addActionListener(new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				r.run();
 			}
-			SwingUtilities.invokeLater(() -> {
-				comp.addActionListener(new AbstractAction() {
 
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						r.run();
-					}
+		});
+	}
 
-				});
-			});
+	public Font lato(int size) {
+		return new Font("Lato", Font.PLAIN, size);
+	}
 
-		}).start();
-		;
+	public void disableAll(Container comp) {
+		comp.setEnabled(false);
+		for (Component cp : comp.getComponents()) {
+			cp.setEnabled(false);
+			if (cp instanceof Container) {
+				disableAll((Container) cp);
+			}
+		}
+	}
+
+	public void enableAll(Container comp) {
+		comp.setEnabled(true);
+		for (Component cp : comp.getComponents()) {
+			cp.setEnabled(true);
+			if (cp instanceof Container) {
+				enableAll((Container) cp);
+			}
+		}
 	}
 }

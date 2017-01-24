@@ -23,13 +23,21 @@ public class Game1OutOf1 implements RPSListener {
 	}
 
 	void askPlayAgain() {
-		Timer t = new Timer(1000, new AbstractAction() {
+		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.actions.disableAll(p);
-				frame.setEnabled(false);
+				frame.actions.disableAll(frame);
 				int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
 						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+				switch (i) {
+				case JOptionPane.YES_OPTION:
+					frame.actions.enableAll(frame);
+					frame.actions.newGame();
+					break;
+				case JOptionPane.NO_OPTION:
+					System.exit(0);
+					break;
+				}
 			}
 		});
 		t.setRepeats(false);
@@ -37,7 +45,7 @@ public class Game1OutOf1 implements RPSListener {
 	}
 
 	void win() {
-		Timer t = new Timer(1000, new AbstractAction() {
+		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("WIN");
@@ -50,11 +58,11 @@ public class Game1OutOf1 implements RPSListener {
 	}
 
 	void tie() {
-		Timer t = new Timer(1000, new AbstractAction() {
+		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				p.countdown.setText("It's a tie; let's play again!");
-				Timer u = new Timer(1000, new AbstractAction() {
+				Timer u = new Timer(2000, new AbstractAction() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						frame.actions.new1OutOf1();
@@ -195,6 +203,11 @@ public class Game1OutOf1 implements RPSListener {
 					p.repaint();
 					break;
 				case 3:
+					p.countdown.setText("Shoot!");
+					p.revalidate();
+					p.repaint();
+					break;
+				case 4:
 					((Timer) e.getSource()).stop();
 					switch (input) {
 					case ROCK:

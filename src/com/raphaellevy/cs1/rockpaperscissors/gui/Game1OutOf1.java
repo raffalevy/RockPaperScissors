@@ -26,12 +26,15 @@ public class Game1OutOf1 implements RPSListener {
 		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.actions.disableAll(frame);
+				//frame.actions.disableAll(frame);
+				//frame.actions.enableAll(frame);
 				int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
 						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 				switch (i) {
 				case JOptionPane.YES_OPTION:
 					frame.actions.enableAll(frame);
+					frame.actions.enableAll(frame.getJMenuBar());
+					frame.actions.enableAll(frame.getJMenuBar().getMenu(0));
 					frame.actions.newGame();
 					break;
 				case JOptionPane.NO_OPTION:

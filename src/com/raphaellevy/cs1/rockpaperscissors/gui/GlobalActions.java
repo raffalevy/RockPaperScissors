@@ -50,7 +50,7 @@ public class GlobalActions {
 	}
 
 	public void new2OutOf3() {
-		frame.setContentPane(new RPSPanel(frame, null));
+		frame.setContentPane(new Game2OutOf3(frame).p);
 		frame.revalidate();
 		frame.repaint();
 	}
@@ -114,5 +114,18 @@ public class GlobalActions {
 				enableAll((Container) cp);
 			}
 		}
+	}
+
+	static void invokeLater(int time, Runnable r) {
+		Timer t = new Timer(time, new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				r.run();
+			}
+
+		});
+		t.setRepeats(false);
+		t.start();
 	}
 }

@@ -2,8 +2,6 @@ package com.raphaellevy.cs1.rockpaperscissors;
 
 import java.util.Scanner;
 
-import javax.swing.ImageIcon;
-
 import com.raphaellevy.cs1.rockpaperscissors.gui.RPSFrame;
 
 /**
@@ -36,8 +34,8 @@ public class RockPaperScissors {
 	 * Main Method - runs at start of program
 	 */
 	public static void main(String[] args) {
-//		instance = new RockPaperScissors();
-//		instance.start();
+		// instance = new RockPaperScissors();
+		// instance.start();
 		RPSFrame.runApp();
 	}
 
@@ -61,7 +59,6 @@ public class RockPaperScissors {
 	private void start() {
 		System.out.println(GameConstants.WELCOME_MESSAGE);
 		System.out.println(GameConstants.MENU_INSTRUCTIONS);
-		new ModeMenu(this).showMenu();
 	}
 
 }

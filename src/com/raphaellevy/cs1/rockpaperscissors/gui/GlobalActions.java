@@ -4,15 +4,11 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
 import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 public class GlobalActions {
@@ -20,7 +16,7 @@ public class GlobalActions {
 		this.frame = frame;
 	}
 
-	 RPSFrame frame;
+	RPSFrame frame;
 
 	public void welcome() {
 		frame.setContentPane(new WelcomePanel(frame));
@@ -60,15 +56,13 @@ public class GlobalActions {
 	}
 
 	public void instructions() {
-		disableAll(frame);
 		InstructionsPanel.createPanel(this);
 	}
+
 	public void onInstructionsExit() {
-		SwingUtilities.invokeLater(() -> {
-			enableAll(frame);
-		});
-		
+
 	}
+
 	JPanel empty = new JPanel();
 
 	public void disposeAll() {
@@ -109,8 +103,7 @@ public class GlobalActions {
 		if (comp instanceof JMenu) {
 			for (Component i : ((JMenu) comp).getMenuComponents()) {
 				i.setEnabled(true);
-				
-				
+
 			}
 		}
 		for (Component cp : comp.getComponents()) {

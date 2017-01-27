@@ -26,21 +26,24 @@ public class Game1OutOf1 implements RPSListener {
 		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//frame.actions.disableAll(frame);
-				//frame.actions.enableAll(frame);
-				int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
-						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-				switch (i) {
-				case JOptionPane.YES_OPTION:
-					frame.actions.enableAll(frame);
-					frame.actions.enableAll(frame.getJMenuBar());
-					frame.actions.enableAll(frame.getJMenuBar().getMenu(0));
-					frame.actions.newGame();
-					break;
-				case JOptionPane.NO_OPTION:
-					System.exit(0);
-					break;
+				// frame.actions.disableAll(frame);
+				// frame.actions.enableAll(frame);
+				if (frame.getContentPane().equals(p)) {
+					int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
+							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+					switch (i) {
+					case JOptionPane.YES_OPTION:
+						frame.actions.enableAll(frame);
+						frame.actions.enableAll(frame.getJMenuBar());
+						frame.actions.enableAll(frame.getJMenuBar().getMenu(0));
+						frame.actions.newGame();
+						break;
+					case JOptionPane.NO_OPTION:
+						System.exit(0);
+						break;
+					}
 				}
+
 			}
 		});
 		t.setRepeats(false);
@@ -51,7 +54,6 @@ public class Game1OutOf1 implements RPSListener {
 		Timer t = new Timer(2000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("WIN");
 				p.countdown.setText("Yay! You won!");
 				askPlayAgain();
 			}
@@ -83,7 +85,6 @@ public class Game1OutOf1 implements RPSListener {
 		Timer t = new Timer(1000, new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("LOSE");
 				p.countdown.setText("Sorry, you lost…");
 				askPlayAgain();
 			}
@@ -163,7 +164,6 @@ public class Game1OutOf1 implements RPSListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(counter);
 				// if (counter == 3) {
 				// ((Timer) e.getSource()).stop();
 				// p.enableButtons();

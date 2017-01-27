@@ -30,18 +30,20 @@ public class Game2OutOf3 implements RPSListener {
 			public void actionPerformed(ActionEvent e) {
 				// frame.actions.disableAll(frame);
 				// frame.actions.enableAll(frame);
-				int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
-						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-				switch (i) {
-				case JOptionPane.YES_OPTION:
-					frame.actions.enableAll(frame);
-					frame.actions.enableAll(frame.getJMenuBar());
-					frame.actions.enableAll(frame.getJMenuBar().getMenu(0));
-					frame.actions.newGame();
-					break;
-				case JOptionPane.NO_OPTION:
-					System.exit(0);
-					break;
+				if (frame.getContentPane().equals(p)) {
+					int i = JOptionPane.showOptionDialog(frame, "Would you like to play again?", "Play Again",
+							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+					switch (i) {
+					case JOptionPane.YES_OPTION:
+						frame.actions.enableAll(frame);
+						frame.actions.enableAll(frame.getJMenuBar());
+						frame.actions.enableAll(frame.getJMenuBar().getMenu(0));
+						frame.actions.newGame();
+						break;
+					case JOptionPane.NO_OPTION:
+						System.exit(0);
+						break;
+					}
 				}
 			}
 		});
@@ -120,7 +122,6 @@ public class Game2OutOf3 implements RPSListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(counter);
 
 				switch (counter) {
 
